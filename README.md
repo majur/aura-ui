@@ -1,12 +1,10 @@
 # Aura UI
 
-Aura UI is an experimental CSS framework concept. The repository currently contains three separate minimalist component-gallery directions:
+Aura UI is an experimental CSS framework concept. The repository now continues with one primary direction:
 
-- `versions/quiet-kernel/` - Paper Stack, editorial/raw grid components
-- `versions/signal-matte/` - State Rail, state-first interface components
 - `versions/fold-ui/` - Tactile Mono, restrained physical controls
 
-Each version uses only static HTML and CSS.
+Tactile Mono uses only static HTML and CSS, follows the operating system color scheme with `prefers-color-scheme`, and focuses on native controls with tactile feedback.
 
 ## Local preview
 
@@ -16,6 +14,4 @@ python3 -m http.server 4173
 
 Then open:
 
-- `http://127.0.0.1:4173/versions/quiet-kernel/`
-- `http://127.0.0.1:4173/versions/signal-matte/`
 - `http://127.0.0.1:4173/versions/fold-ui/`
