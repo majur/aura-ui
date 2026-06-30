@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tactile Depth - Aura UI</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="td-stage">
+    <nav class="td-top">
+      <strong>Tactile Depth</strong>
+      <a href="/">porovnať</a>
+    </nav>
+
+    <section class="td-head">
+      <p>04 / spatial html components</p>
+      <h1>Controls that occupy real space.</h1>
+    </section>
+
+    <section class="td-deck" aria-label="Spatial component samples">
+      <article class="td-block td-block-actions">
+        <header>
+          <span>Raised actions</span>
+          <output>depth 3</output>
+        </header>
+        <div class="td-row">
+          <button class="td-button">Commit</button>
+          <button class="td-button" data-surface="line">Inspect</button>
+          <button class="td-button" data-surface="warm">Release</button>
+        </div>
+      </article>
+
+      <article class="td-block">
+        <header>
+          <span>Inset fields</span>
+          <output>well</output>
+        </header>
+        <label class="td-field">
+          <span>Package</span>
+          <input class="td-input" value="@aura/depth" />
+        </label>
+        <label class="td-field">
+          <span>Note</span>
+          <textarea class="td-input td-textarea">Every control has a surface, wall, and pressure state.</textarea>
+        </label>
+      </article>
+
+      <article class="td-block">
+        <header>
+          <span>Switch bank</span>
+          <output>native</output>
+        </header>
+        <label class="td-switch">
+          <input type="checkbox" checked />
+          <span>Depth shadows</span>
+        </label>
+        <label class="td-switch">
+          <input type="checkbox" />
+          <span>Edge contrast</span>
+        </label>
+      </article>
+
+      <article class="td-block td-block-range">
+        <header>
+          <span>Range plate</span>
+          <output>active thumb</output>
+        </header>
+        <label class="td-field">
+          <span>Pressure</span>
+          <input class="td-range" type="range" min="0" max="100" value="58" />
+        </label>
+      </article>
+
+      <article class="td-block">
+        <header>
+          <span>Segmented shelf</span>
+          <output>tabs</output>
+        </header>
+        <div class="td-tabs" role="tablist" aria-label="Depth tabs">
+          <button class="td-tab" role="tab" aria-selected="true">Base</button>
+          <button class="td-tab" role="tab" aria-selected="false">Raised</button>
+          <button class="td-tab" role="tab" aria-selected="false">Inset</button>
+        </div>
+      </article>
+
+      <details class="td-block" open>
+        <summary>Layer details</summary>
+        <p>Panels are not flat cards. They use side walls, inset light and pressure states.</p>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

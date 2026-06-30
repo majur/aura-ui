@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aura UI - Tactile Mono</title>
+  <title>Aura UI - Tactile comparison</title>
   <style>
     @layer reset, page;
     @layer reset {
       * { box-sizing: border-box; }
-      body, h1, p { margin: 0; }
+      body, h1, h2, p { margin: 0; }
       a { color: inherit; }
     }
     @layer page {
@@ -16,17 +16,23 @@
         color-scheme: light dark;
         --bg: oklch(94% 0.015 250);
         --case: oklch(90% 0.014 250);
+        --top: oklch(98% 0.004 250);
         --text: oklch(17% 0.018 250);
         --muted: oklch(48% 0.018 250);
         --line: oklch(66% 0.018 250);
+        --cool: oklch(42% 0.1 248);
+        --shadow: oklch(62% 0.018 250);
       }
       @media (prefers-color-scheme: dark) {
         :root {
           --bg: oklch(16% 0.018 250);
           --case: oklch(22% 0.018 250);
+          --top: oklch(29% 0.018 250);
           --text: oklch(92% 0.012 250);
           --muted: oklch(69% 0.018 250);
-          --line: oklch(40% 0.018 250);
+          --line: oklch(42% 0.018 250);
+          --cool: oklch(72% 0.1 248);
+          --shadow: oklch(8% 0.012 250);
         }
       }
       body {
@@ -37,47 +43,70 @@
         line-height: 1.45;
       }
       main {
-        width: min(820px, calc(100% - 24px));
+        width: min(920px, calc(100% - 24px));
         margin-inline: auto;
-        padding: 34px 0 48px;
+        padding: 28px 0 48px;
       }
-      section {
+      header {
         display: grid;
-        gap: 18px;
-        padding: 18px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: var(--case);
+        gap: 12px;
+        padding-bottom: 20px;
       }
       h1 {
         max-width: 11ch;
-        font-size: clamp(48px, 15vw, 96px);
+        font-size: clamp(46px, 15vw, 96px);
         line-height: .92;
         letter-spacing: 0;
       }
-      p { max-width: 54ch; color: var(--muted); }
+      p { max-width: 58ch; color: var(--muted); }
+      nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+        gap: 14px;
+      }
       a {
-        width: fit-content;
-        min-height: 46px;
-        display: inline-flex;
-        align-items: center;
+        display: grid;
+        gap: 10px;
+        min-height: 160px;
+        padding: 18px;
         border: 1px solid var(--line);
-        border-radius: 13px;
-        padding: 9px 15px;
-        color: var(--text);
+        border-radius: 18px;
+        background: linear-gradient(180deg, var(--top), var(--case));
+        box-shadow: 0 8px 0 var(--shadow);
         text-decoration: none;
-        font-weight: 780;
+      }
+      a:active { transform: translateY(5px); box-shadow: 0 3px 0 var(--shadow); }
+      strong { font-size: 24px; line-height: 1; }
+      span { color: var(--muted); }
+      code {
+        width: fit-content;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 4px 9px;
+        color: var(--cool);
+        font: 700 12px ui-monospace, SFMono-Regular, Menlo, monospace;
       }
     }
   </style>
 </head>
 <body>
   <main>
-    <section>
-      <h1>Aura UI Tactile Mono</h1>
-      <p>Jeden smer frameworku: minimalistické fyzické ovládače, OS-driven dark mode a interakcie postavené na natívnom HTML.</p>
-      <a href="/versions/fold-ui/">Otvoriť komponenty</a>
-    </section>
+    <header>
+      <h1>Aura UI tactile comparison</h1>
+      <p>Dva smery vedľa seba: pôvodný striedmy Tactile Mono a nová priestorovejšia verzia Tactile Depth.</p>
+    </header>
+    <nav aria-label="Aura UI comparison">
+      <a href="/versions/fold-ui/">
+        <code>current</code>
+        <strong>Tactile Mono</strong>
+        <span>Striedme fyzické ovládače, jemná haptická logika.</span>
+      </a>
+      <a href="/versions/tactile-depth/">
+        <code>new</code>
+        <strong>Tactile Depth</strong>
+        <span>Priestorovejšie komponenty s hlbšími vrstvami, hranami a stlačením.</span>
+      </a>
+    </nav>
   </main>
 </body>
 </html>
