@@ -3,61 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fold UI - Aura UI</title>
+  <title>Tactile Mono - Aura UI</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <main class="fu-shell fu-page">
-    <nav class="fu-nav">
-      <strong>Fold UI</strong>
-      <a href="/">Všetky verzie</a>
+  <main class="tm-console">
+    <nav class="tm-top">
+      <strong>Tactile Mono</strong>
+      <a href="/">verzie</a>
     </nav>
 
-    <section class="fu-stack">
-      <span class="fu-kicker">HTML components</span>
-      <h1>Folded surfaces, strict rhythm.</h1>
-      <p>Variant používa jednoduchý “fold” roh ako rozpoznateľný systémový znak.</p>
+    <section class="tm-head">
+      <p>03 / html components</p>
+      <h1>Minimal controls with physical feedback.</h1>
     </section>
 
-    <section class="fu-grid">
-      <article class="fu-fold fu-stack" data-mark="blue">
-        <h2>Buttons</h2>
-        <div class="fu-row">
-          <button class="fu-button" data-kind="fill">Create</button>
-          <button class="fu-button">Preview</button>
-          <button class="fu-button" data-kind="mark">Ship</button>
+    <section class="tm-panel" aria-label="Control samples">
+      <article class="tm-module">
+        <h2>Pressable actions</h2>
+        <div class="tm-row">
+          <button class="tm-button">Commit</button>
+          <button class="tm-button" data-surface="flat">Diff</button>
+          <button class="tm-button" data-surface="warm">Ship</button>
         </div>
       </article>
 
-      <article class="fu-fold fu-stack" data-mark="wine">
+      <article class="tm-module">
         <h2>Inputs</h2>
-        <label class="fu-field">
-          <span class="fu-label">Title</span>
-          <input class="fu-input" value="Component note" />
+        <label class="tm-field">
+          <span>Package</span>
+          <input class="tm-input" value="@aura/ui" />
         </label>
-        <label class="fu-field">
-          <span class="fu-label">Details</span>
-          <textarea class="fu-textarea">Button, field, tab, tile.</textarea>
+        <label class="tm-field">
+          <span>Notes</span>
+          <textarea class="tm-input tm-textarea">No gradients. No generic glass. Real affordance.</textarea>
         </label>
       </article>
 
-      <article class="fu-fold fu-stack">
-        <h2>Tiles</h2>
-        <div class="fu-grid">
-          <p class="fu-tile"><strong>4</strong><span>states</span></p>
-          <p class="fu-tile"><strong>8</strong><span>tokens</span></p>
-        </div>
+      <article class="tm-module">
+        <h2>Switches</h2>
+        <label class="tm-switch">
+          <input type="checkbox" checked />
+          <span>Reduced motion</span>
+        </label>
+        <label class="tm-switch">
+          <input type="checkbox" />
+          <span>High contrast</span>
+        </label>
       </article>
-    </section>
 
-    <section class="fu-fold fu-stack">
-      <h2>Tabs and notice</h2>
-      <div class="fu-tabs" role="tablist" aria-label="Fold tabs">
-        <button class="fu-tab" role="tab" aria-selected="true">Base</button>
-        <button class="fu-tab" role="tab" aria-selected="false">Form</button>
-        <button class="fu-tab" role="tab" aria-selected="false">Data</button>
-      </div>
-      <div class="fu-alert"><strong>Notice:</strong> the folded corner is structural, not decorative noise.</div>
+      <article class="tm-module">
+        <h2>Range</h2>
+        <label class="tm-field">
+          <span>Radius</span>
+          <input class="tm-range" type="range" min="0" max="12" value="3" />
+        </label>
+      </article>
+
+      <details class="tm-module" open>
+        <summary>Details</summary>
+        <p>Subtle depth is reserved for interactive controls, not every container.</p>
+      </details>
     </section>
   </main>
 </body>

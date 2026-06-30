@@ -3,68 +3,70 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Signal Matte - Aura UI</title>
+  <title>State Rail - Aura UI</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <main class="sm-shell sm-page">
-    <nav class="sm-bar">
-      <strong>Signal Matte</strong>
-      <a href="/">Všetky verzie</a>
+  <main class="sr-app">
+    <nav class="sr-rail" aria-label="State rail">
+      <strong>State Rail</strong>
+      <a href="/">verzie</a>
     </nav>
 
-    <section class="sm-stack">
-      <span class="sm-chip">HTML components</span>
-      <h1>Dense controls, quiet states.</h1>
-      <p>Kompaktný variant pre nástroje, interné aplikácie a dashboardy.</p>
+    <section class="sr-head">
+      <p>02 / html components</p>
+      <h1>Every component carries a visible state.</h1>
     </section>
 
-    <section class="sm-grid">
-      <article class="sm-panel sm-stack" data-state="active">
-        <h2>Action set</h2>
-        <div class="sm-row">
-          <button class="sm-button">Run</button>
-          <button class="sm-button" data-kind="line">Review</button>
-          <button class="sm-button" data-kind="signal">Approve</button>
+    <section class="sr-board" aria-label="Component states">
+      <article class="sr-cell" data-state="ready">
+        <span class="sr-state">ready</span>
+        <h2>Buttons</h2>
+        <div class="sr-row">
+          <button class="sr-button">Start</button>
+          <button class="sr-button" data-kind="ghost">Pause</button>
+          <button class="sr-button" data-kind="danger">Stop</button>
         </div>
       </article>
 
-      <article class="sm-panel sm-stack">
+      <article class="sr-cell" data-state="input">
+        <span class="sr-state">input</span>
         <h2>Form</h2>
-        <label class="sm-field">
-          <span class="sm-label">Component</span>
-          <input class="sm-input" value="Dialog" />
+        <label class="sr-field">
+          <span>Identifier</span>
+          <input class="sr-input" value="AURA-142" />
         </label>
-        <label class="sm-field">
-          <span class="sm-label">Priority</span>
-          <select class="sm-select">
-            <option>Normal</option>
-            <option>High</option>
+        <label class="sr-field">
+          <span>Status</span>
+          <select class="sr-input">
+            <option>Ready</option>
+            <option>Review</option>
+            <option>Blocked</option>
           </select>
         </label>
       </article>
 
-      <article class="sm-panel sm-stack" data-density="tight">
+      <article class="sr-cell" data-state="meter">
+        <span class="sr-state">meter</span>
         <h2>Progress</h2>
-        <p>Coverage</p>
-        <div class="sm-meter"><span></span></div>
-        <p><strong>72%</strong> complete</p>
+        <progress class="sr-progress" max="100" value="68">68%</progress>
+        <meter class="sr-meter" min="0" max="100" low="35" high="80" optimum="70" value="68">68</meter>
       </article>
-    </section>
 
-    <section class="sm-panel sm-stack">
-      <h2>Tabs, list, alert</h2>
-      <div class="sm-tabs" role="tablist" aria-label="Signal tabs">
-        <button class="sm-tab" role="tab" aria-selected="true">Inputs</button>
-        <button class="sm-tab" role="tab" aria-selected="false">State</button>
-        <button class="sm-tab" role="tab" aria-selected="false">Output</button>
-      </div>
-      <ul class="sm-list">
-        <li><span>Button group</span><span class="sm-tag">stable</span></li>
-        <li><span>Select field</span><span class="sm-tag">focus</span></li>
-        <li><span>Status row</span><span class="sm-tag">active</span></li>
-      </ul>
-      <div class="sm-alert"><strong>Alert:</strong> low-noise danger state, no modal drama.</div>
+      <article class="sr-cell sr-wide" data-state="log">
+        <span class="sr-state">log</span>
+        <h2>Status list</h2>
+        <ol class="sr-log">
+          <li><span>token sync</span><output>done</output></li>
+          <li><span>focus state</span><output>visible</output></li>
+          <li><span>reduced motion</span><output>enabled</output></li>
+        </ol>
+      </article>
+
+      <details class="sr-cell sr-wide" data-state="open" open>
+        <summary>Native disclosure</summary>
+        <p>State Rail uses native HTML elements where possible and lets CSS expose their state.</p>
+      </details>
     </section>
   </main>
 </body>

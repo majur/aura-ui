@@ -2,9 +2,9 @@
 
 Aura UI is an experimental CSS framework concept. The repository currently contains three separate minimalist component-gallery directions:
 
-- `versions/quiet-kernel/` - soft document-like components
-- `versions/signal-matte/` - compact dark technical components
-- `versions/fold-ui/` - folded-card visual language
+- `versions/quiet-kernel/` - Paper Stack, editorial/raw grid components
+- `versions/signal-matte/` - State Rail, state-first interface components
+- `versions/fold-ui/` - Tactile Mono, restrained physical controls
 
 Each version uses only static HTML and CSS.
 
