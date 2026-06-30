@@ -1,0 +1,137 @@
+@layer reset, tokens, base, layout, components;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; }
+  body { min-height: 100svh; }
+  button, input, select { font: inherit; }
+  a { color: inherit; }
+}
+
+@layer tokens {
+  :root {
+    color-scheme: dark;
+    --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --bg: #151611;
+    --panel: #202119;
+    --panel-2: #292a20;
+    --text: #f4f1e7;
+    --muted: #aaa694;
+    --line: #3d3d32;
+    --blue: #78a8b8;
+    --green: #a0b86f;
+    --red: #d17a62;
+    --r: 7px;
+  }
+}
+
+@layer base {
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  h1, h2, h3 { letter-spacing: 0; line-height: 1.08; font-weight: 620; }
+  h1 { font-size: clamp(28px, 8vw, 50px); }
+  h2 { font-size: 22px; }
+  p { color: var(--muted); }
+  :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+}
+
+@layer layout {
+  .sm-shell { width: min(1080px, calc(100% - 24px)); margin-inline: auto; }
+  .sm-page { display: grid; gap: 24px; padding: 14px 0 36px; }
+  .sm-stack { display: grid; gap: 12px; }
+  .sm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 10px; }
+  .sm-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+}
+
+@layer components {
+  .sm-bar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 0;
+    background: color-mix(in srgb, var(--bg), transparent 5%);
+    border-bottom: 1px solid var(--line);
+  }
+  .sm-bar a { color: var(--muted); text-decoration: none; }
+  .sm-panel {
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: var(--panel);
+    padding: 14px;
+  }
+  .sm-panel[data-density="tight"] { padding: 10px; }
+  .sm-panel[data-state="active"] { border-color: color-mix(in srgb, var(--green), var(--line) 35%); background: var(--panel-2); }
+  .sm-chip {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 9px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .sm-chip::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .sm-button {
+    min-height: 38px;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: var(--text);
+    color: var(--bg);
+    padding: 8px 12px;
+    font-weight: 720;
+    cursor: pointer;
+  }
+  .sm-button[data-kind="line"] { background: transparent; color: var(--text); }
+  .sm-button[data-kind="signal"] { background: var(--green); color: #151611; border-color: var(--green); }
+  .sm-field { display: grid; gap: 6px; }
+  .sm-label { color: var(--muted); font-size: 12px; font-weight: 760; text-transform: uppercase; }
+  .sm-input, .sm-select {
+    width: 100%;
+    min-height: 39px;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: #11120e;
+    color: var(--text);
+    padding: 8px 10px;
+  }
+  .sm-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    overflow: hidden;
+  }
+  .sm-tab {
+    border: 0;
+    border-right: 1px solid var(--line);
+    background: transparent;
+    color: var(--muted);
+    padding: 9px 8px;
+  }
+  .sm-tab:last-child { border-right: 0; }
+  .sm-tab[aria-selected="true"] { background: var(--panel-2); color: var(--text); }
+  .sm-list { list-style: none; display: grid; gap: 0; padding: 0; }
+  .sm-list li { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .sm-list li:last-child { border-bottom: 0; }
+  .sm-tag { color: var(--green); font-size: 13px; font-weight: 720; }
+  .sm-alert { border: 1px solid color-mix(in srgb, var(--red), var(--line)); border-radius: var(--r); padding: 12px; color: var(--text); }
+  .sm-meter { height: 9px; border-radius: 999px; background: #10110d; overflow: hidden; border: 1px solid var(--line); }
+  .sm-meter span { display: block; height: 100%; width: 72%; background: linear-gradient(90deg, var(--blue), var(--green)); }
+}

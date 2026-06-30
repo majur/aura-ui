@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiet Kernel - Aura UI</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="ak-shell ak-page">
+    <nav class="ak-top">
+      <strong>Quiet Kernel</strong>
+      <a href="/">Všetky verzie</a>
+    </nav>
+
+    <section class="ak-section">
+      <span class="ak-badge">HTML components</span>
+      <h1>Form controls, panels, lists.</h1>
+      <p>Demo používa iba základné HTML prvky a triedy frameworku.</p>
+    </section>
+
+    <section class="ak-grid" aria-label="Components">
+      <article class="ak-card ak-stack">
+        <h2>Buttons</h2>
+        <div class="ak-row">
+          <button class="ak-button">Save</button>
+          <button class="ak-button" data-kind="quiet">Cancel</button>
+          <button class="ak-button" data-kind="earth">Archive</button>
+        </div>
+      </article>
+
+      <article class="ak-card ak-stack" data-rule="left">
+        <h2>Fields</h2>
+        <label class="ak-field">
+          <span class="ak-label">Email</span>
+          <input class="ak-input" type="email" placeholder="name@example.com" />
+        </label>
+        <label class="ak-field">
+          <span class="ak-label">Status</span>
+          <select class="ak-select">
+            <option>Ready</option>
+            <option>Waiting</option>
+            <option>Blocked</option>
+          </select>
+        </label>
+      </article>
+
+      <article class="ak-card ak-stack" data-tone="wash">
+        <h2>Stats</h2>
+        <div class="ak-grid">
+          <p class="ak-stat"><strong>12</strong><span class="ak-muted">Open</span></p>
+          <p class="ak-stat"><strong>94%</strong><span class="ak-muted">Valid</span></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="ak-card ak-stack ak-wide">
+      <h2>Tabs and table</h2>
+      <div class="ak-tabs" role="tablist" aria-label="Table tabs">
+        <button class="ak-tab" role="tab" aria-selected="true">Queue</button>
+        <button class="ak-tab" role="tab" aria-selected="false">Done</button>
+        <button class="ak-tab" role="tab" aria-selected="false">Notes</button>
+      </div>
+      <table class="ak-table">
+        <thead><tr><th>Component</th><th>State</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td>Button</td><td>Primary</td><td>--ink</td></tr>
+          <tr><td>Input</td><td>Focus</td><td>--accent</td></tr>
+          <tr><td>Card</td><td>Wash</td><td>--panel-2</td></tr>
+        </tbody>
+      </table>
+      <div class="ak-alert"><strong>Alert:</strong> plain border, strong rule, readable on mobile.</div>
+    </section>
+  </main>
+</body>
+</html>

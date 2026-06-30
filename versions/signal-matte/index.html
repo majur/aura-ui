@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Signal Matte - Aura UI</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="sm-shell sm-page">
+    <nav class="sm-bar">
+      <strong>Signal Matte</strong>
+      <a href="/">Všetky verzie</a>
+    </nav>
+
+    <section class="sm-stack">
+      <span class="sm-chip">HTML components</span>
+      <h1>Dense controls, quiet states.</h1>
+      <p>Kompaktný variant pre nástroje, interné aplikácie a dashboardy.</p>
+    </section>
+
+    <section class="sm-grid">
+      <article class="sm-panel sm-stack" data-state="active">
+        <h2>Action set</h2>
+        <div class="sm-row">
+          <button class="sm-button">Run</button>
+          <button class="sm-button" data-kind="line">Review</button>
+          <button class="sm-button" data-kind="signal">Approve</button>
+        </div>
+      </article>
+
+      <article class="sm-panel sm-stack">
+        <h2>Form</h2>
+        <label class="sm-field">
+          <span class="sm-label">Component</span>
+          <input class="sm-input" value="Dialog" />
+        </label>
+        <label class="sm-field">
+          <span class="sm-label">Priority</span>
+          <select class="sm-select">
+            <option>Normal</option>
+            <option>High</option>
+          </select>
+        </label>
+      </article>
+
+      <article class="sm-panel sm-stack" data-density="tight">
+        <h2>Progress</h2>
+        <p>Coverage</p>
+        <div class="sm-meter"><span></span></div>
+        <p><strong>72%</strong> complete</p>
+      </article>
+    </section>
+
+    <section class="sm-panel sm-stack">
+      <h2>Tabs, list, alert</h2>
+      <div class="sm-tabs" role="tablist" aria-label="Signal tabs">
+        <button class="sm-tab" role="tab" aria-selected="true">Inputs</button>
+        <button class="sm-tab" role="tab" aria-selected="false">State</button>
+        <button class="sm-tab" role="tab" aria-selected="false">Output</button>
+      </div>
+      <ul class="sm-list">
+        <li><span>Button group</span><span class="sm-tag">stable</span></li>
+        <li><span>Select field</span><span class="sm-tag">focus</span></li>
+        <li><span>Status row</span><span class="sm-tag">active</span></li>
+      </ul>
+      <div class="sm-alert"><strong>Alert:</strong> low-noise danger state, no modal drama.</div>
+    </section>
+  </main>
+</body>
+</html>

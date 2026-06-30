@@ -1,83 +1,64 @@
 <!doctype html>
-<html lang="sk" data-theme="dark">
+<html lang="sk">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aura UI demo</title>
-  <link rel="stylesheet" href="./aura.css" />
+  <title>Aura UI variants</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100svh;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f6f5ef;
+      color: #151515;
+      line-height: 1.5;
+    }
+    main {
+      width: min(760px, calc(100% - 32px));
+      margin-inline: auto;
+      padding: 40px 0;
+    }
+    h1, h2, p { margin: 0; letter-spacing: 0; }
+    h1 { font-size: clamp(30px, 8vw, 58px); line-height: 1; }
+    p { color: #56544e; }
+    .stack { display: grid; gap: 18px; }
+    .list { display: grid; gap: 10px; margin-top: 28px; }
+    a {
+      display: grid;
+      gap: 4px;
+      padding: 16px;
+      border: 1px solid #d8d4c8;
+      border-radius: 8px;
+      color: inherit;
+      text-decoration: none;
+      background: #fffdf8;
+    }
+    a strong { font-size: 18px; }
+    a span { color: #625f57; }
+  </style>
 </head>
-
 <body>
-  <header class="au-shell au-section">
-    <nav class="au-nav">
-      <strong>Aura UI</strong>
-      <div class="au-cluster">
-        <a href="#components">Komponenty</a>
-        <a class="au-button" data-variant="ghost" href="#start">Začať</a>
-      </div>
-    </nav>
-
-    <div class="au-split au-mt-6">
-      <div class="au-stack au-gap-6">
-        <span class="au-badge">CSS framework budúcnosti</span>
-        <h1 class="au-balance">Menej utility chaosu. Viac systémového dizajnu.</h1>
-        <p>Tokeny, cascade layers, container queries, moderné farby, glass + brutal prvky a komponenty bez JavaScriptu.</p>
-        <div class="au-cluster">
-          <a class="au-button" href="#components">Pozrieť komponenty</a>
-          <a class="au-button" data-variant="soft" href="#">Dokumentácia</a>
-        </div>
-      </div>
-
-      <div class="au-orb" aria-hidden="true"></div>
-    </div>
-  </header>
-
-  <main class="au-shell au-section" id="components">
-    <div class="au-grid">
-      <article class="au-card" data-pop="hard">
-        <div class="au-stack">
-          <span class="au-badge">Card</span>
-          <h2>AI-first layout</h2>
-          <p>Komponent sa prispôsobuje kontajneru, nie iba viewportu. Preto funguje v gride, sidebare aj mobile app shelli.</p>
-          <a class="au-button au-full" href="#">Primárna akcia</a>
-        </div>
-      </article>
-
-      <article class="au-card" data-pop="glow">
-        <div class="au-kpi">
-          <span class="au-muted">Konverzia</span>
-          <strong>38%</strong>
-          <p>Veľké čísla sú škálované cez container query jednotky.</p>
-        </div>
-      </article>
-
-      <article class="au-card">
-        <form class="au-stack">
-          <div class="au-field">
-            <label class="au-label" for="email">Email</label>
-            <input class="au-input" id="email" type="email" placeholder="hello@posila.ai" />
-            <small class="au-help">Accessible focus, tmavý režim a tokeny v základe.</small>
-          </div>
-          <button class="au-button" type="button">Odoslať</button>
-        </form>
-      </article>
-    </div>
-
-    <section class="au-card au-mt-6">
-      <div class="au-stack">
-        <h2>Tabs</h2>
-
-        <div class="au-tabs" role="tablist" aria-label="Demo tabs">
-          <button class="au-tab" role="tab" aria-selected="true">Design</button>
-          <button class="au-tab" role="tab" aria-selected="false">Code</button>
-          <button class="au-tab" role="tab" aria-selected="false">Deploy</button>
-        </div>
-
-        <div class="au-alert">
-          <strong>Princíp:</strong> CSS má byť malý jazyk pre produktový systém, nie zoznam 5000 tried.
-        </div>
-      </div>
+  <main>
+    <section class="stack">
+      <h1>Aura UI variants</h1>
+      <p>Tri smery pre minimalistický CSS framework. Každá stránka je iba galéria HTML komponentov.</p>
     </section>
+
+    <nav class="list" aria-label="Aura UI variants">
+      <a href="/versions/quiet-kernel/">
+        <strong>Quiet Kernel</strong>
+        <span>Jemný systém pre obsah, formuláre a produktové panely.</span>
+      </a>
+      <a href="/versions/signal-matte/">
+        <strong>Signal Matte</strong>
+        <span>Kompaktný technický systém so stavmi a tichou farbou.</span>
+      </a>
+      <a href="/versions/fold-ui/">
+        <strong>Fold UI</strong>
+        <span>Originálnejšie skladané povrchy, ostrý rytmus a minimum dekorácie.</span>
+      </a>
+    </nav>
   </main>
 </body>
 </html>

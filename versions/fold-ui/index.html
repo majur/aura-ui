@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fold UI - Aura UI</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="fu-shell fu-page">
+    <nav class="fu-nav">
+      <strong>Fold UI</strong>
+      <a href="/">Všetky verzie</a>
+    </nav>
+
+    <section class="fu-stack">
+      <span class="fu-kicker">HTML components</span>
+      <h1>Folded surfaces, strict rhythm.</h1>
+      <p>Variant používa jednoduchý “fold” roh ako rozpoznateľný systémový znak.</p>
+    </section>
+
+    <section class="fu-grid">
+      <article class="fu-fold fu-stack" data-mark="blue">
+        <h2>Buttons</h2>
+        <div class="fu-row">
+          <button class="fu-button" data-kind="fill">Create</button>
+          <button class="fu-button">Preview</button>
+          <button class="fu-button" data-kind="mark">Ship</button>
+        </div>
+      </article>
+
+      <article class="fu-fold fu-stack" data-mark="wine">
+        <h2>Inputs</h2>
+        <label class="fu-field">
+          <span class="fu-label">Title</span>
+          <input class="fu-input" value="Component note" />
+        </label>
+        <label class="fu-field">
+          <span class="fu-label">Details</span>
+          <textarea class="fu-textarea">Button, field, tab, tile.</textarea>
+        </label>
+      </article>
+
+      <article class="fu-fold fu-stack">
+        <h2>Tiles</h2>
+        <div class="fu-grid">
+          <p class="fu-tile"><strong>4</strong><span>states</span></p>
+          <p class="fu-tile"><strong>8</strong><span>tokens</span></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="fu-fold fu-stack">
+      <h2>Tabs and notice</h2>
+      <div class="fu-tabs" role="tablist" aria-label="Fold tabs">
+        <button class="fu-tab" role="tab" aria-selected="true">Base</button>
+        <button class="fu-tab" role="tab" aria-selected="false">Form</button>
+        <button class="fu-tab" role="tab" aria-selected="false">Data</button>
+      </div>
+      <div class="fu-alert"><strong>Notice:</strong> the folded corner is structural, not decorative noise.</div>
+    </section>
+  </main>
+</body>
+</html>

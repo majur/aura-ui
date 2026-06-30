@@ -1,18 +1,21 @@
 # Aura UI
 
-Aura UI is a small static CSS framework demo built around design tokens, cascade layers, container queries, modern color functions, glass surfaces, and strong component defaults.
+Aura UI is an experimental CSS framework concept. The repository currently contains three separate minimalist component-gallery directions:
 
-## Files
+- `versions/quiet-kernel/` - soft document-like components
+- `versions/signal-matte/` - compact dark technical components
+- `versions/fold-ui/` - folded-card visual language
 
-- `aura.css` - framework styles
-- `index.html` - demo page
-- `netlify.toml` - static Netlify deployment config
+Each version uses only static HTML and CSS.
 
 ## Local preview
-
-Open `index.html` directly in a browser, or serve the folder:
 
 ```sh
 python3 -m http.server 4173
 ```
 
+Then open:
+
+- `http://127.0.0.1:4173/versions/quiet-kernel/`
+- `http://127.0.0.1:4173/versions/signal-matte/`
+- `http://127.0.0.1:4173/versions/fold-ui/`
